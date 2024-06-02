@@ -1,0 +1,116 @@
+Sidebar CSS
+
+ *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    position: relative;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.sidebar {
+    background: #131D24;
+    color: #fff;
+    height: 100vh;
+    width: 200px;
+    transition: width 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.sidebar.closed {
+    width: 60px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.top_section {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.bars {
+    display: flex;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.link:hover {
+    background: white;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.active {
+    background: white;
+    color: #000;
+}
+
+.icon, .link_text {
+    font-size: 20px;
+}
+
+/* Profile Section CSS */
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    margin-top: auto; /* Position at the bottom */
+    position: relative; /* Ensure position context for pseudo-element */
+}
+
+.profile_icon {
+    font-size: 30px;
+    color: #fff;
+}
+
+.profile_name {
+    font-size: 18px;
+    color: #fff;
+}
+
+.profile::before {
+    content: "";
+    width: 100%; /* Full width of the container */
+    height: 1px; /* Height of the line */
+    background-color: #fff; /* Color of the line */
+    position: absolute;
+    top: 0;
+}
+
+

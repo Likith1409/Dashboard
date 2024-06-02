@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Dashboard from './pages/Dashboard';
+import Notification from './pages/Notification'
 
-function App() {
+import './components/bar.css'
+import Suppliers from './pages/Suppliers';
+import Members from './pages/Members';
+import './pages/Dashboard.css'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Sidebar>
+    <Routes>
+      <Route path='/' element={<Dashboard/>}></Route>
+      <Route path='/Dashboard' element={<Dashboard/>}></Route>
+      <Route path='/Notification' element={<Notification/>}></Route>
+      <Route path='/Suppliers' element={<Suppliers/>}></Route>
+      <Route path='/Members' element={<Members/>}></Route>
+    </Routes> 
+    </Sidebar>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
